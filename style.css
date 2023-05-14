@@ -1,0 +1,377 @@
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+body{
+  color: #ffffff;
+  background-color: #000000e9;
+  margin: 0 20px;
+}
+
+
+nav a{
+    color: white!important;
+    text-decoration: none;
+}
+
+
+nav a.active{
+    font-weight: bold;
+    
+}
+
+nav .dropdown-menu{
+  background-color: #000000;
+  border: white solid 1px;
+}
+nav .dropdown-menu button{
+  color: white;
+}
+nav .btn.show{
+  border:none!important;
+}
+
+nav i{
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    nav div[class*="navbar-collapse"]>div{
+      justify-content: end!important;
+    }
+}
+
+
+/* --------------Banner------------- */
+
+
+
+#banner div[type="button"]{
+  border: #ffffff70 solid 1px;
+  padding: 5px 5px ;
+}
+#banner i{
+  font-size: 1rem;
+  padding: 5px;
+  margin: 0;
+}
+
+#banner .dropdown-menu{
+  background-color: #000000;
+  border: white solid 1px;
+}
+#banner .dropdown-menu button{
+  color: white;
+}
+
+
+
+
+
+
+
+
+/* -----------------Carousels------------------ */
+
+#carousel img{
+  height: 117.68px!important;
+  object-fit: cover;
+}
+
+#most, #again{
+  height: 200px;
+}
+#releses{
+  height: 380px;
+}
+
+
+#carousel{
+  overflow: hidden;
+}
+
+#carousel div.carousel-inner{
+  overflow: visible;
+}
+
+#carousel button[data-bs-slide="prev"]{
+  display: flex;
+  justify-content: start;
+  top: 12px;
+  left: 0px;
+  background: linear-gradient(90deg, rgba(0,0,0,0.7792366946778712) 26%, rgba(250,248,248,0) 100%);
+  border-radius: 5px 0 0 5px;
+  height: 117.68px;
+  width: 150px;
+}
+
+#carousel button[data-bs-slide="next"]{
+  right: -123px;
+  border-radius: 5px;
+  top: 12px;
+  background: linear-gradient(-90deg, rgba(0,0,0,0.7792366946778712) 26%, rgba(250,248,248,0) 100%);
+  height: 117.68px;
+  width: 91px;
+}
+
+
+#carousel button[data-bs-slide="prev"]{
+  visibility: hidden;
+}
+
+
+
+#carousel div.row>*{
+  padding: 0!important;
+}
+
+#carousel div.row{
+  padding: 12px;
+  gap: 5px;
+}
+
+#carousel div.row>div.col-5{
+  transition: all 0.5s ease-in-out;
+  transform: scale(1);
+}
+
+
+#carousel div.row>div.col-5:hover{
+  z-index: 5;
+  transform: scale(1.3);
+  margin: 0 5px;
+}
+
+
+#carousel img.img-fluid{
+  border-radius: 5px;
+}
+
+
+/*----------Effetto card movies--------------*/
+
+
+/* div class="getstart" */
+div.getstart{
+  position: absolute;
+}
+
+
+/* items */
+
+div.getstart div.item{
+  padding: 0 20px!important;
+  position: relative;
+  color: black;
+  z-index: 2;
+}
+
+
+div.getstart div.item span{
+  color: #ffffff;
+  width: auto;
+  margin-left: 15px!important;
+  align-self: flex-end;
+  z-index: 3;
+}
+
+div.getstart div.item i{
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: #ffffff70 solid 2px;
+  color: #ffffff;
+}
+div.getstart div.item i:hover{
+  border-color: #ffffff;
+}
+
+div.getstart div.item i:first-child{
+  border: none;
+  color: #000000;
+  background-color: #ffffff;
+}
+
+div.getstart div.item i:first-child:hover{
+  background-color: #ffffff70;
+}
+
+div.getstart p {
+  font-size: 12px;
+}
+
+div.getstart ul{
+  position: relative;
+  z-index: 2;
+}
+
+div.getstart ul li::marker{
+  color: #ffffff70;
+}
+
+div.getstart ul li:first-child{
+  list-style: none;
+}
+
+.carousel-control-next-icon:hover{
+  transform: scale(1.3);
+}
+
+.carousel-control-prev-icon:hover{
+  transform: scale(1.3);
+}
+
+/* :hover */
+
+div.getstart:hover::after{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  border: white solid 1px;
+  border-radius:5px;
+  background: linear-gradient(180deg, rgba(131,58,180,0) 0%, rgba(0,0,0,1) 65%);
+  height:100%;
+  z-index: 1;
+}
+
+div.getstart div.content{
+  visibility: hidden;
+  
+}
+
+div.getstart:hover div.content{
+  visibility: visible;
+  margin-top: 10px;
+}
+
+
+
+
+@media screen and (max-width: 768px) {
+
+  /* remove film details */
+  #carousel div.row div.getstart div.content{
+    display: none!important;
+  }
+  div.getstart:hover::after{
+    display: none;
+  }
+
+  #carousel div.row>div.col-5:hover{
+    transform: scale(1.05);
+  }
+  #carousel button[data-bs-slide="next"] {
+    right: -30px;
+  }
+
+}
+
+
+
+
+
+/* ----------------Animazione fade-in------------- */
+
+#carousel div#most{
+  animation: fade-in 0.5s ease-in-out;
+}
+
+
+#carousel div#again{
+  animation: fade-in 1s ease-in-out;
+}
+
+
+#carousel div#releses{
+  animation: fade-in 1.5s ease-in-out;
+}
+
+
+
+
+@keyframes fade-in{
+  0%{
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  100%{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+
+
+
+
+
+
+/* --------------Footer-------------- */
+
+
+
+#footer {
+  max-width: 1000px;
+}
+
+#footer .socials a {
+  color: #ffffff70;
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+}
+#footer .socials a:hover {
+  color: #ffffff;
+}
+
+#footer div.item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding-bottom: 2rem;
+}
+#footer div.item a {
+  text-decoration: none;
+  color: #ffffff70;
+  font-size: 0.7rem;
+}
+#footer div.item a:hover {
+  text-decoration: underline;
+}
+
+#footer button.service{
+  background-color: #00000000;
+  color: #ffffff70;
+  border: #ffffff70 solid 1px;
+  padding: 5px;
+  margin-bottom: 2rem;
+  border-radius: 2px;
+}
+
+#footer button.service:hover{
+  background-color: #ffffff70;
+  color: #000000;
+  border: rgba(0, 0, 0, 0) solid 1px;
+}
+
+
+#footer p:last-of-type {
+  font-size: 0.6rem;
+  color: #ffffff70;
+}
