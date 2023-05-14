@@ -22,9 +22,7 @@ function showButton() {
 
 
 function main(){
-    let audio = document.getElementById("myAudio");
-    audio.currentTime = 0;
-    audio.play();
+    let audio = document.getElementById("myAudio").play();
     for (const buttonPrev of buttonPrevs) {
         buttonPrev.addEventListener('click', () => {
             hiddenButton();

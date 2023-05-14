@@ -15,6 +15,9 @@ body{
 }
 
 
+
+
+/* Navbar */
 nav a{
     color: white!important;
     text-decoration: none;
@@ -41,15 +44,10 @@ nav i{
   cursor: pointer;
 }
 
-@media screen and (max-width: 768px) {
-    nav div[class*="navbar-collapse"]>div{
-      justify-content: end!important;
-    }
-}
+
 
 
 /* --------------Banner------------- */
-
 
 
 #banner div[type="button"]{
@@ -60,6 +58,10 @@ nav i{
   font-size: 1rem;
   padding: 5px;
   margin: 0;
+}
+
+#banner .dropdown-item:hover{
+  background-color: #ffffff70;
 }
 
 #banner .dropdown-menu{
@@ -79,52 +81,9 @@ nav i{
 
 /* -----------------Carousels------------------ */
 
-#carousel img{
-  height: 117.68px!important;
-  object-fit: cover;
-}
-
-#most, #again{
-  height: 200px;
-}
-#releses{
-  height: 380px;
-}
-
-
 #carousel{
   overflow: hidden;
 }
-
-#carousel div.carousel-inner{
-  overflow: visible;
-}
-
-#carousel button[data-bs-slide="prev"]{
-  display: flex;
-  justify-content: start;
-  top: 12px;
-  left: 0px;
-  background: linear-gradient(90deg, rgba(0,0,0,0.7792366946778712) 26%, rgba(250,248,248,0) 100%);
-  border-radius: 5px 0 0 5px;
-  height: 117.68px;
-  width: 150px;
-}
-
-#carousel button[data-bs-slide="next"]{
-  right: -123px;
-  border-radius: 5px;
-  top: 12px;
-  background: linear-gradient(-90deg, rgba(0,0,0,0.7792366946778712) 26%, rgba(250,248,248,0) 100%);
-  height: 117.68px;
-  width: 91px;
-}
-
-
-#carousel button[data-bs-slide="prev"]{
-  visibility: hidden;
-}
-
 
 
 #carousel div.row>*{
@@ -153,11 +112,59 @@ nav i{
   border-radius: 5px;
 }
 
+#carousel img{
+  height: 117.68px!important;
+  object-fit: cover;
+}
+
+
+#most, #again{
+  height: 200px;
+}
+#releses{
+  height: 380px;
+}
+
+
+#carousel div.carousel-inner{
+  overflow: visible;
+}
+
+/* Button carousel */
+
+#carousel button[data-bs-slide="prev"]{
+  display: flex;
+  justify-content: start;
+  top: 12px;
+  left: 0px;
+  background: linear-gradient(90deg, rgba(0,0,0,0.7792366946778712) 26%, rgba(250,248,248,0) 100%);
+  border-radius: 5px 0 0 5px;
+  height: 117.68px;
+  width: 150px;
+}
+
+#carousel button[data-bs-slide="next"]{
+  right: -123px;
+  border-radius: 5px;
+  top: 12px;
+  background: linear-gradient(-90deg, rgba(0,0,0,0.7792366946778712) 26%, rgba(250,248,248,0) 100%);
+  height: 117.68px;
+  width: 91px;
+}
+
+
+#carousel button[data-bs-slide="prev"]{
+  visibility: hidden;
+}
+
+
+
 
 /*----------Effetto card movies--------------*/
 
 
 /* div class="getstart" */
+
 div.getstart{
   position: absolute;
 }
@@ -223,12 +230,12 @@ div.getstart ul li:first-child{
   list-style: none;
 }
 
-.carousel-control-next-icon:hover{
-  transform: scale(1.3);
-}
 
-.carousel-control-prev-icon:hover{
-  transform: scale(1.3);
+/* div class="content" */
+
+div.getstart div.content{
+  visibility: hidden;
+  
 }
 
 /* :hover */
@@ -246,40 +253,19 @@ div.getstart:hover::after{
   z-index: 1;
 }
 
-div.getstart div.content{
-  visibility: hidden;
-  
+.carousel-control-next-icon:hover{
+  transform: scale(1.3);
 }
+
+.carousel-control-prev-icon:hover{
+  transform: scale(1.3);
+}
+
 
 div.getstart:hover div.content{
   visibility: visible;
   margin-top: 10px;
 }
-
-
-
-
-@media screen and (max-width: 768px) {
-
-  /* remove film details */
-  #carousel div.row div.getstart div.content{
-    display: none!important;
-  }
-  div.getstart:hover::after{
-    display: none;
-  }
-
-  #carousel div.row>div.col-5:hover{
-    transform: scale(1.05);
-  }
-  #carousel button[data-bs-slide="next"] {
-    right: -30px;
-  }
-
-}
-
-
-
 
 
 /* ----------------Animazione fade-in------------- */
@@ -311,11 +297,6 @@ div.getstart:hover div.content{
     transform: translateY(0);
   }
 }
-
-
-
-
-
 
 
 
@@ -374,4 +355,30 @@ div.getstart:hover div.content{
 #footer p:last-of-type {
   font-size: 0.6rem;
   color: #ffffff70;
+}
+
+
+
+/* Media Query */
+
+@media screen and (max-width: 768px) {
+  nav div[class*="navbar-collapse"]>div{
+    justify-content: end!important;
+  }
+
+  /* remove film details */
+  #carousel div.row div.getstart div.content{
+    display: none!important;
+  }
+  div.getstart:hover::after{
+    display: none;
+  }
+
+  #carousel div.row>div.col-5:hover{
+    transform: scale(1.05);
+  }
+  #carousel button[data-bs-slide="next"] {
+    right: -30px;
+  }
+
 }
