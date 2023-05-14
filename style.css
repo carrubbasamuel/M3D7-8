@@ -380,5 +380,8 @@ div.getstart:hover div.content{
   #carousel button[data-bs-slide="next"] {
     right: -30px;
   }
+  #carousel button[data-bs-slide="prev"]{
+    width: 45px;
+  }
 
 }
