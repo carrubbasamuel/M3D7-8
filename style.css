@@ -188,11 +188,11 @@ div.getstart::after{
 /* div class="content" */
 
 div.getstart div.content{
- visibility: hidden;
+ display: none;
 }
 
 #carousel div.row>div.col-5:hover div.content{
-  visibility: visible;
+  display: block;
 }
 
 /* items */

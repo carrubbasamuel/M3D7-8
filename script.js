@@ -26,7 +26,7 @@ function main(){
     for (const buttonPrev of buttonPrevs) {
         buttonPrev.addEventListener('click', () => {
             hiddenButton();
-            setTimeout(showButton, 500);
+            setTimeout(showButton, 200);
         });
     }
     for (const buttonNext of buttonNexts) {
