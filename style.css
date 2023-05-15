@@ -37,7 +37,7 @@ nav .dropdown-menu button{
   color: white;
 }
 nav .btn.show{
-  border:none!important;
+  border: none!important;
 }
 
 nav i{
@@ -107,6 +107,10 @@ nav i{
   margin: 0 5px;
 }
 
+#carousel div.row>div.col-5:hover div.getstart{
+  display: flex;
+}
+
 
 #carousel img.img-fluid{
   border-radius: 5px;
@@ -166,7 +170,7 @@ nav i{
 /* div class="getstart" */
 
 div.getstart{
-  position: absolute;
+  display: none;
 }
 
 
@@ -240,7 +244,9 @@ div.getstart div.content{
 
 /* :hover */
 
-div.getstart:hover::after{
+
+
+div.getstart::after{
   content: "";
   position: absolute;
   top: 0;
