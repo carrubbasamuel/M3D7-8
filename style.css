@@ -96,19 +96,15 @@ nav i{
 }
 
 #carousel div.row>div.col-5{
-  transition: all 0.5s ease-in-out;
+  transition: all 0.4s ease-in;
   transform: scale(1);
 }
 
 
 #carousel div.row>div.col-5:hover{
-  z-index: 5;
+  z-index: 3;
   transform: scale(1.3);
   margin: 0 5px;
-}
-
-#carousel div.row>div.col-5:hover div.getstart{
-  display: flex;
 }
 
 
@@ -170,9 +166,34 @@ nav i{
 /* div class="getstart" */
 
 div.getstart{
-  display: none;
+ opacity: 0;
+ transition: all 0.2s ease-in-out;
 }
 
+#carousel div.row>div.col-5:hover div.getstart{
+  opacity: 1;
+}
+
+div.getstart::after{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  border-radius:5px;
+  background: linear-gradient(180deg, rgba(131,58,180,0) 0%, rgba(0,0,0,1) 65%);
+  height:100%;
+  z-index: 1;
+}
+/* div class="content" */
+
+div.getstart div.content{
+ visibility: hidden;
+}
+
+#carousel div.row>div.col-5:hover div.content{
+  visibility: visible;
+}
 
 /* items */
 
@@ -235,29 +256,9 @@ div.getstart ul li:first-child{
 }
 
 
-/* div class="content" */
-
-div.getstart div.content{
-  visibility: hidden;
-  
-}
-
 /* :hover */
 
 
-
-div.getstart::after{
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  border: white solid 1px;
-  border-radius:5px;
-  background: linear-gradient(180deg, rgba(131,58,180,0) 0%, rgba(0,0,0,1) 65%);
-  height:100%;
-  z-index: 1;
-}
 
 .carousel-control-next-icon:hover{
   transform: scale(1.3);
@@ -268,10 +269,7 @@ div.getstart::after{
 }
 
 
-div.getstart:hover div.content{
-  visibility: visible;
-  margin-top: 10px;
-}
+
 
 
 /* ----------------Animazione fade-in------------- */
@@ -376,7 +374,7 @@ div.getstart:hover div.content{
   #carousel div.row div.getstart div.content{
     display: none!important;
   }
-  div.getstart:hover::after{
+  div.getstart::after{
     display: none;
   }
 
